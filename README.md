@@ -10,4 +10,4 @@ The command line interface for STAMP is a solution for users that prefer to not 
 The Desktop application will provide a more visual experience to the user.  This application will attempt to make use of several UI design principles.  
 
 ## Website 
-At this time the web interface will need some more investigation into, in order to develop the best solution.  
+At this time the web interface will need some more investigation in order to develop the best solution.  
