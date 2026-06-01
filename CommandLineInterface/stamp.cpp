@@ -1,5 +1,5 @@
 //****************************************************************************
-//	STAMP Command Line Interface
+//	STAMP Command Line Interface.
 //	Programmed by: Houston Brown
 //	Last Compiled Date: 5/15/2024
 //****************************************************************************
@@ -16,28 +16,20 @@
 #include "Admin.h"
 #include "KeyboardInterruptException.cpp"
 
-
 void printOpeningHdr();
-
 void login();
-
 void registerAcct();
-
 void printHelp();
-
 void clearConsoleScreen();
-
 void processInput();
-
 void signalHandler(int signal);
 
-
 //****************************************************************************
-//	Driver
+//	Driver.
 //****************************************************************************
 int main(int argc, char *argv[])
 {
-	// Register signal handler
+	// Register signal handler.
     signal(SIGINT, signalHandler);
 	std::string dashboardInput = "";
 
@@ -60,7 +52,6 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-
 //****************************************************************************
 //	NAME: printOpeningMsg.
 //
@@ -76,7 +67,7 @@ void printOpeningHdr()
 	std::cout << STARS << std::endl;
 	
 	/////////////////////////////////////////////////////
-	// Coloring Output
+	// Coloring Output.
 	HANDLE hConsole;
 	CONSOLE_SCREEN_BUFFER_INFO myBuffInfo;
 	
@@ -93,7 +84,7 @@ void printOpeningHdr()
 	printf("*       #    ##    ##   ##         ##    ##                ##  ##              *\n");
 	printf("*        ####      ##  ##           ##  ##                  ## ##              *\n");	
 
-	// Restoring console defaults
+	// Restoring console defaults.
 	SetConsoleTextAttribute(hConsole, myBuffInfo.wAttributes);	
 	
 	std::cout << BLANKLINE << std::endl;
@@ -205,7 +196,7 @@ void processInput()
 			if (tokens[0] != "login" && tokens[0] != "help"
 				&& tokens[0] != "regact" && tokens[0] != "clear")
 			{
-				// invalid command
+				// Invalid command.
 				const std::string errorMsg = tokens[0] + 
 											 " is not a valid command.";
 				WinUtils::printErrorMsg(errorMsg);
@@ -244,7 +235,7 @@ void signalHandler(int signal)
 {
 	if (signal == SIGINT) 
 	{
-        exit(signal); // Exit with the signal code
+        exit(signal); // Exit with the signal code.
     }
-    // only processing CTRL+C signal
+    // only processing CTRL+C signal.
 }
