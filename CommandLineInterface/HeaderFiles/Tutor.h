@@ -1,7 +1,7 @@
 //****************************************************************************
 //	STAMP Command Line Interface.
 //
-//  Faculty User Declaration File.
+//  Tutor User Declaration File.
 //
 //	Programmed by: Houston Brown
 //	Last Compiled Date: 5/15/2024
