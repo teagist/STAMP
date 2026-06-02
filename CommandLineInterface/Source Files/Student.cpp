@@ -1,3 +1,12 @@
+//****************************************************************************
+//	STAMP Command Line Interface.
+//
+//  Student User Definition File.
+//
+//	Programmed by: Houston Brown
+//	Last Compiled Date: 5/15/2024
+//****************************************************************************
+
 #include "WinUtils.h"
 #include "Student.h"
 
