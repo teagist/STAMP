@@ -1,65 +1,289 @@
-body{
-	margin: 0;
+/* ==========================
+   GLOBAL STYLES
+========================== */
+body
+{
+    background-color:#f8f9fa;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#212529;
+    margin:0;
+    padding:0;
+    line-height:1.6;
 }
 
-header{
-	background: #999;
-	color: white;
-	padding: 15px 15px 0 15px;
+/* Smooth scrolling */
+html
+{
+    scroll-behavior:smooth;
 }
 
-header h1{
-	margin: 0;
-	display: inline;
+/* ==========================
+   NAVBAR
+========================== */
+.navbar
+{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-nav ul{
-	margin: 0;
-	padding: 0 0 0 15px;
-	display: inline;
+.navbar-brand
+{
+    font-size:1.5rem;
+    letter-spacing:1px;
 }
 
-nav ul li{
-	background: black;
-	color: white;
-	display: inline-block;
-	list-style-type: none;
-	padding: 5px 15px;
+/* ==========================
+   HERO SECTION
+========================== */
+.hero
+{
+    min-height:85vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.60)
+    ),
+
+    url('https://images.unsplash.com/photo-1515162305284-f123e3df0255?auto=format&fit=crop&w=1500&q=80');
+
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    color:white;
+    padding:40px;
 }
 
-nav ul li a{
-	color: white;
+.hero h1
+{
+    font-weight:700;
+    margin-bottom:25px;
 }
 
-.row:after{
-	clear: both;
-	content:"";
-	display: table;
+.hero p
+{
+    max-width:800px;
+    margin:auto;
 }
 
-.col{
-	background:#333;
-	border-radius: 5px;
-	color: white;
-	padding: 10px .5%;
-	float: left;
-	margin: .5%;
-	width: 31%;
+/* ==========================
+   GENERAL SECTIONS
+========================== */
+.section
+{
+    padding:80px 0;
 }
 
-.hero {
-  height: 50vh;
-  margin-top: -70px;
-  padding-top: 70px;
-  background: 
-    linear-gradient(rgba(13,42,74,0.7), rgba(13,42,74,0.7)),
-    center/cover no-repeat;
+.section h2
+{
+    font-weight:700;
 }
 
-.hero h1 {
-  color: #fff;
+/* ==========================
+   CARDS
+========================== */
+.card
+{
+    border:none;
+    border-radius:12px;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    box-shadow:
+        0 2px 10px rgba(0,0,0,.08);
+    overflow:hidden;
 }
 
-.hero p {
-  color: #e0e0e0;
+.card:hover
+{
+    transform:translateY(-6px);
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+}
+
+.card-body
+{
+    padding:30px;
+}
+
+.card i
+{
+    margin-bottom:15px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+.btn
+{
+    border-radius:8px;
+    padding:10px 22px;
+    transition:all .2s ease;
+}
+
+.btn:hover
+{
+    transform:translateY(-1px);
+}
+
+/* ==========================
+   PREVIEW BOX
+========================== */
+.preview-box
+{
+    background:white;
+    border-radius:15px;
+    padding:50px;
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.10);
+}
+
+/* ==========================
+   FAQ
+========================== */
+.accordion-button
+{
+    font-weight:600;
+}
+
+.accordion-button:focus
+{
+    box-shadow:none;
+}
+
+/* ==========================
+   LOGIN MODAL
+========================== */
+.modal-content
+{
+    border-radius:12px;
+}
+
+.modal-header
+{
+    border-bottom:none;
+}
+
+.modal-footer
+{
+    border-top:none;
+}
+
+#loginError
+{
+    font-weight:600;
+}
+
+/* ==========================
+   CONTACT SECTION
+========================== */
+#contact
+{
+    background:#212529;
+}
+
+#contact input,
+#contact textarea
+{
+    border-radius:8px;
+    padding:12px;
+}
+
+#contact .form-control:focus
+{
+    box-shadow:none;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer
+{
+    background:#212529;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+.footer a
+{
+    color:white;
+    text-decoration:none;
+}
+
+.footer a:hover
+{
+    text-decoration:underline;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width:992px)
+{
+    .hero
+    {
+        min-height:70vh;
+    }
+
+    .hero h1
+    {
+        font-size:2.8rem;
+    }
+}
+
+@media (max-width:768px)
+{
+    .hero
+    {
+        min-height:60vh;
+        padding:25px;
+    }
+
+    .hero h1
+    {
+        font-size:2.2rem;
+    }
+
+    .section
+    {
+        padding:60px 0;
+    }
+
+    .preview-box
+    {
+        padding:30px;
+    }
+}
+
+@media (max-width:576px)
+{
+    .hero h1
+    {
+        font-size:1.8rem;
+    }
+
+    .hero p
+    {
+        font-size:1rem;
+    }
+
+    .btn
+    {
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .card-body
+    {
+        padding:20px;
+    }
 }
